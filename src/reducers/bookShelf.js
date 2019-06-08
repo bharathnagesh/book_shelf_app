@@ -75,11 +75,10 @@ export const getBookShelf = () => {
   };
 };
 
-export const changeStatus = (updated) => {
-  console.log(updated);
+export const changeStatus = (updated, id) => {
   return {
     types: [GET_CHANGESTATUS_REQUESTED, GET_CHANGESTATUS_SUCCESS, GET_CHANGESTATUS_FAILURE],
-    promise: client => client.put(`http://localhost:3004/bookShelf/${updated.id}`, updated),
+    promise: client => client.put(`http://localhost:3004/bookShelf/${id}`, updated),
     payload: updated
   };
 }

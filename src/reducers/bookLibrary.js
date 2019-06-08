@@ -110,11 +110,10 @@ export const searchBooks = (title) => {
   };
 }
 
-export const changeStatus = (updated) => {
-  console.log(updated);
+export const changeStatus = (updated, id) => {
   return {
     types: [GET_CHANGESTATUS_REQUESTED, GET_CHANGESTATUS_SUCCESS, GET_CHANGESTATUS_FAILURE],
-    promise: client => client.put(`http://localhost:3004/bookLibrary/${updated.id}`, updated),
+    promise: client => client.patch(`http://localhost:3004/bookLibrary/${id}`, updated),
     payload: updated
   };
 }

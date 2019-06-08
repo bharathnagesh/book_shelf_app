@@ -18,9 +18,13 @@ class Home extends Component {
   }
 
   changeStatus = (e, book) => {
-    const updated = book;
-    updated.status = e.target.value;
-    this.props.changeStatus(updated);
+    const id = book.id;
+    const k = {
+      status: e.target.value
+    }
+    this.props.changeStatus(JSON.stringify(k), id).then(() => {
+      this.props.getBookLibrary();
+    });
   }
 
   handleInputChange = (e) => {

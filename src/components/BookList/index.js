@@ -1,10 +1,6 @@
 import React from 'react';
 import img from '../../bookImage.png';
 
-// const renderOptions = () => {
-
-// }
-
 const BookList = ({ books, changeStatus }) => {
   return books.map((book) => {
     return (

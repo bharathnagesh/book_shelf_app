@@ -39,6 +39,7 @@ body {
   height: 10vh;
   width: 100%;
   background-color: lightblue;
+  z-index: 2;
 }
 
 .mt-10vh {
