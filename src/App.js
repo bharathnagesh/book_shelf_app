@@ -5,7 +5,7 @@ import './App.css';
 
 const App = (props) => {
   return (
-    <div className="App">
+    <div className="d-flex align-items-center justify-content-center">
       {props.children}
     </div>
   );

@@ -1,15 +1,15 @@
 import React from 'react';
 import BookList from '@components/BookList';
 
-const CurrentlyReading = (props) => {
+const Read = (props) => {
   return (
     <div className="width-100vw">
       <h2 className="bg-primary text-center">
-        Currently Reading
+        Read
       </h2>
       <BookList books={props.books} />
     </div>
   );
 };
 
-export default CurrentlyReading;
+export default Read;

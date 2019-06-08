@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { getBookShelf } from '@reducers/bookShelf';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CurrentlyReading from '@components/CurrentlyReading';
+import WantToRead from '@components/WantToRead';
+import Read from '@components/Read';
 
 class Home extends Component {
   constructor(props) {
@@ -16,8 +18,24 @@ class Home extends Component {
 
   render() {
     if(!!this.props.books) {
+      const currentlyReading = [];
+      const wantToRead = [];
+      const read = [];
+      for(let i = 0; i < this.props.books.length; i++){
+        if(this.props.books[i].status === 0){
+          read.push(this.props.books[i]);
+        } else if(this.props.books[i].status === 1) {
+          currentlyReading.push(this.props.books[i]);
+        } else {
+          wantToRead.push(this.props.books[i]);
+        }
+      }
       return (
-        <CurrentlyReading books={this.props.books} />
+        <Fragment>
+          <CurrentlyReading books={currentlyReading} />
+          <WantToRead books={wantToRead} />
+          <Read books={read} />
+        </Fragment>
       );
     }
     return(
