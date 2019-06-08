@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { getBookShelf } from '@reducers/bookShelf';
+import { getBookShelf, changeStatus } from '@reducers/bookShelf';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CurrentlyReading from '@components/CurrentlyReading';
@@ -15,6 +15,12 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.getBookShelf();
+  }
+
+  changeStatus = (e, book) => {
+    const updated = book;
+    updated.status = e.target.value;
+    this.props.changeStatus(updated);
   }
 
   render() {
@@ -33,9 +39,9 @@ class Home extends Component {
       }
       return (
         <Fragment>
-          <CurrentlyReading books={currentlyReading} />
-          <WantToRead books={wantToRead} />
-          <Read books={read} />
+          <CurrentlyReading changeStatus={this.changeStatus} books={currentlyReading} />
+          <WantToRead changeStatus={this.changeStatus} books={wantToRead} />
+          <Read changeStatus={this.changeStatus} books={read} />
           <Link to="/search" className="d-flex justify-content-center font-weight-bold btn-secondary floatingBtnDiv">
             +
           </Link>
@@ -60,6 +66,7 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getBookShelf,
+  changeStatus
 }, dispatch);
 
 export default connect(

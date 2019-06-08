@@ -8,7 +8,7 @@ const CurrentlyReading = (props) => {
         Currently Reading
       </h2>
       <div className="d-flex flex-wrap justify-content-center">
-        <BookList books={props.books} />
+        <BookList changeStatus={props.changeStatus} books={props.books} />
       </div>
     </div>
   );
