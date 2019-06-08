@@ -17,14 +17,11 @@ class Home extends Component {
     this.props.getBookLibrary();
   }
 
-  changeStatus = (e, book) => {
-    const id = book.id;
+  changeStatus = (e, id) => {
     const k = {
-      status: e.target.value
+      status: +e.target.value
     }
-    this.props.changeStatus(JSON.stringify(k), id).then(() => {
-      this.props.getBookLibrary();
-    });
+    this.props.changeStatus(JSON.stringify(k), id);
   }
 
 

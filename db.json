@@ -75,73 +75,73 @@
     {
       "id": 13,
       "title": "Book 13",
-      "status": null,
+      "status": 3,
       "author": "Author 13"
     },
     {
       "id": 14,
       "title": "Book 14",
-      "status": null,
+      "status": 3,
       "author": "Author 14"
     },
     {
       "id": 15,
       "title": "Book 15",
-      "status": null,
+      "status": 3,
       "author": "Author 15"
     },
     {
       "id": 16,
       "title": "Book 16",
-      "status": null,
+      "status": 3,
       "author": "Author 16"
     },
     {
       "id": 17,
       "title": "Book 17",
-      "status": null,
+      "status": 3,
       "author": "Author 17"
     },
     {
       "id": 18,
       "title": "Book 18",
-      "status": null,
+      "status": 3,
       "author": "Author 18"
     },
     {
       "id": 19,
       "title": "Book 19",
-      "status": null,
+      "status": 3,
       "author": "Author 19"
     },
     {
       "id": 20,
       "title": "Book 20",
-      "status": null,
+      "status": 3,
       "author": "Author 20"
     },
     {
       "id": 21,
       "title": "Book 21",
-      "status": null,
+      "status": 3,
       "author": "Author 21"
     },
     {
       "id": 22,
       "title": "Book 22",
-      "status": null,
+      "status": 3,
       "author": "Author 22"
     },
     {
       "id": 23,
       "title": "Book 23",
-      "status": null,
+      "status": 3,
       "author": "Author 23"
     },
     {
       "id": 24,
       "title": "Book 24",
-      "status": null,
+      "status": 3,
       "author": "Author 24"
     }
   ]
