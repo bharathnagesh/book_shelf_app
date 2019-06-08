@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { getBookShelf, changeStatus } from '@reducers/bookShelf';
+import { getBookLibrary, changeStatus } from '@reducers/bookLibrary';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import CurrentlyReading from '@components/CurrentlyReading';
@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.getBookShelf();
+    this.props.getBookLibrary();
   }
 
   changeStatus = (e, book) => {
@@ -23,7 +23,7 @@ class Home extends Component {
       status: e.target.value
     }
     this.props.changeStatus(JSON.stringify(k), id).then(() => {
-      this.props.getBookShelf();
+      this.props.getBookLibrary();
     });
   }
 
@@ -37,7 +37,7 @@ class Home extends Component {
           read.push(this.props.books[i]);
         } else if(this.props.books[i].status === 1) {
           currentlyReading.push(this.props.books[i]);
-        } else {
+        } else if(this.props.books[i].status === 2){
           wantToRead.push(this.props.books[i]);
         }
       }
@@ -61,15 +61,15 @@ class Home extends Component {
 }
 
 const mapStateToProps = ({
-  bookShelf
+  bookLibrary
 }) => ({
-  books: bookShelf.bookShelf,
-  loaded: bookShelf.loaded,
-  loading: bookShelf.loading
+  books: bookLibrary.bookLibrary,
+  loaded: bookLibrary.loaded,
+  loading: bookLibrary.loading
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getBookShelf,
+  getBookLibrary,
   changeStatus
 }, dispatch);
 

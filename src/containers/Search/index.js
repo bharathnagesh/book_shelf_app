@@ -27,6 +27,7 @@ class Home extends Component {
     });
   }
 
+
   handleInputChange = (e) => {
     this.setState({
       searchQuery: e.target.value
