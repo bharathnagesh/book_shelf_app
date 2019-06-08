@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import Home from '@containers/Home';
+import Search from '@containers/Search';
 
 export default (
   <Router>
@@ -14,6 +15,7 @@ export default (
       >
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/search' component={Search} />
         </Switch>
       </div>
     </App>

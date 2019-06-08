@@ -4,10 +4,12 @@ import BookList from '@components/BookList';
 const CurrentlyReading = (props) => {
   return (
     <div className="width-100vw">
-      <h2 className="bg-primary text-center">
+      <h2 className="bg-primary text-center py-3">
         Currently Reading
       </h2>
-      <BookList books={props.books} />
+      <div className="d-flex flex-wrap justify-content-center">
+        <BookList books={props.books} />
+      </div>
     </div>
   );
 };

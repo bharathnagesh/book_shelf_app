@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import CurrentlyReading from '@components/CurrentlyReading';
 import WantToRead from '@components/WantToRead';
 import Read from '@components/Read';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   constructor(props) {
@@ -35,6 +36,9 @@ class Home extends Component {
           <CurrentlyReading books={currentlyReading} />
           <WantToRead books={wantToRead} />
           <Read books={read} />
+          <Link to="/search" className="d-flex justify-content-center font-weight-bold btn-secondary floatingBtnDiv">
+            +
+          </Link>
         </Fragment>
       );
     }
