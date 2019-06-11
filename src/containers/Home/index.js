@@ -11,9 +11,6 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-
-  componentDidMount() {
     this.props.getBookLibrary();
   }
 
@@ -21,11 +18,10 @@ class Home extends Component {
     const data = {
       title: book.title,
       status: +e.target.value,
-      author: book.author
+      author: book.author,
+      id: +book.id
     }
-    this.props.changeStatus(data, book.id).then(() => {
-      this.props.getBookLibrary();
-    });
+    this.props.changeStatus(data, book.id);
   }
 
   render() {

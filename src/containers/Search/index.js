@@ -5,15 +5,12 @@ import { connect } from 'react-redux';
 import BookList from '@components/BookList';
 import { Link } from 'react-router-dom';
 
-class Home extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchQuery: ''
     };
-  }
-
-  componentDidMount() {
     this.props.getBookLibrary();
   }
 
@@ -21,11 +18,15 @@ class Home extends Component {
     const data = {
       title: book.title,
       status: +e.target.value,
-      author: book.author
+      author: book.author,
+      id: +book.id
     }
-    this.props.changeStatus(data, book.id);
+    this.props.changeStatus(data, book.id).then(() => {
+      if(data.status !== 4) {
+        this.props.history.push('/');
+      }
+    });
   }
-
 
   handleInputChange = (e) => {
     this.setState({
@@ -82,4 +83,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(Search);

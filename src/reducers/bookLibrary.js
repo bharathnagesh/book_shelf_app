@@ -47,12 +47,14 @@ export default (state = initialState, action) => {
       };
     }
     case GET_CHANGESTATUS_SUCCESS: {
+      const foundIndex = state.bookLibrary.findIndex(x => x.id === action.payload.id);
+      state.bookLibrary[foundIndex] = action.payload;
       return {
         ...state,
         loading: false,
         error: false,
         loaded: true,
-        bookLibrary: action.payload
+        bookLibrary: state.bookLibrary
       };
     }
     case GET_CHANGESTATUS_FAILURE: {
