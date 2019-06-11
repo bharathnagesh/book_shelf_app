@@ -5,7 +5,7 @@ import './App.css';
 
 const App = (props) => {
   return (
-    <div className="d-flex">
+    <div className="width-100pc">
       {props.children}
     </div>
   );

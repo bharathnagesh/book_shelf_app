@@ -7,8 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.width-100vw {
-  width: 100vw;
+.width-100pc {
+  width: 100%;
 }
 
 .floatingBtnDiv {
@@ -49,7 +49,7 @@ body {
 .selectToOrder {
   position: relative;
   bottom: 40%;
-  left: 35%;
+  left: 15%;
   max-width: 10%;
   background: lightblue;
 }

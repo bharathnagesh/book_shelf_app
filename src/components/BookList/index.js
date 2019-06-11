@@ -4,8 +4,8 @@ import img from '../../bookImage.png';
 const BookList = ({ books, changeStatus }) => {
   return books.map((book) => {
     return (
-      <div className="d-flex m-4 flex-column justify-content-center align-items-center" key={book.id}>
-        <img alt={book.title} src={img} height={100} width={75} />
+      <div className="d-flex m-2 flex-column justify-content-center align-items-center" key={book.id}>
+        <img alt={book.title} src={img} height={90} width={65} />
         <div>
           {book.title}
         </div>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { getBookLibrary, changeStatus } from '@reducers/bookLibrary';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -39,7 +39,7 @@ class Search extends Component {
   render() {
     if(!!this.props.books) {
       return (
-        <Fragment>
+        <div className="d-flex">
           <div className="header d-flex align-items-center px-5">
             <Link to="/" className="backLink mr-5">
               Back
@@ -47,7 +47,7 @@ class Search extends Component {
             <input type="text" className="form-control" value={this.state.searchQuery} onChange={this.handleInputChange} />
           </div>
           {this.props.books.length !== 0 && (
-            <div className="mt-10vh d-flex flex-wrap">
+            <div className="mt-10vh d-flex flex-wrap justify-content-center">
               <BookList changeStatus={this.changeStatus} books={this.props.books} />
             </div>
           )}
@@ -56,7 +56,7 @@ class Search extends Component {
               No Results Found
             </div>
           )}
-        </Fragment>
+        </div>
       );
     }
     return(
