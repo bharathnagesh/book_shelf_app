@@ -23,7 +23,9 @@ class Home extends Component {
       status: +e.target.value,
       author: book.author
     }
-    this.props.changeStatus(data, book.id);
+    this.props.changeStatus(data, book.id).then(() => {
+      this.props.getBookLibrary();
+    });
   }
 
   render() {
