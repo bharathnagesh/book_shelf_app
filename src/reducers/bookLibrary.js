@@ -1,4 +1,4 @@
-export const GET_BOOKLIBRARY_REQUESTED = 'bookLibrary/BOOKLIBRARY_REQUESTED';
+  export const GET_BOOKLIBRARY_REQUESTED = 'bookLibrary/BOOKLIBRARY_REQUESTED';
 export const GET_BOOKLIBRARY_SUCCESS = 'bookLibrary/BOOKLIBRARY_SUCCESS';
 export const GET_BOOKLIBRARY_FAILURE = 'bookLibrary/BOOKLIBRARY_FAILURE';
 
@@ -80,7 +80,7 @@ export default (state = initialState, action) => {
         loading: false,
         error: false,
         loaded: true,
-        bookLibrary: action.result
+        bookLibrary: action.payload
       };
     }
     case GET_CHANGESTATUS_FAILURE: {
@@ -110,10 +110,10 @@ export const searchBooks = (title) => {
   };
 }
 
-export const changeStatus = (updated, id) => {
+export const changeStatus = (data, id) => {
   return {
     types: [GET_CHANGESTATUS_REQUESTED, GET_CHANGESTATUS_SUCCESS, GET_CHANGESTATUS_FAILURE],
-    promise: client => client.patch(`http://localhost:3004/bookLibrary/${id}`, updated),
-    payload: updated
+    promise: client => client.put(`http://localhost:3004/bookLibrary/${id}`, { data }),
+    payload: data
   };
 }

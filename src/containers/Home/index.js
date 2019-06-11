@@ -17,11 +17,13 @@ class Home extends Component {
     this.props.getBookLibrary();
   }
 
-  changeStatus = (e, id) => {
-    const k = {
-      status: +e.target.value
+  changeStatus = (e, book) => {
+    const data = {
+      title: book.title,
+      status: +e.target.value,
+      author: book.author
     }
-    this.props.changeStatus(JSON.stringify(k), id);
+    this.props.changeStatus(data, book.id);
   }
 
   render() {
@@ -30,7 +32,7 @@ class Home extends Component {
       const wantToRead = [];
       const read = [];
       for(let i = 0; i < this.props.books.length; i++){
-        if(this.props.books[i].status === 0){
+        if(this.props.books[i].status === 3){
           read.push(this.props.books[i]);
         } else if(this.props.books[i].status === 1) {
           currentlyReading.push(this.props.books[i]);

@@ -12,12 +12,12 @@ const BookList = ({ books, changeStatus }) => {
         <div className="text-muted">
           {book.author}
         </div>
-        <select value={book.status} onChange={(e) => { changeStatus(e, book.id) }} className="selectToOrder">
+        <select value={book.status} onChange={(e) => { changeStatus(e, book) }} className="selectToOrder">
           <optgroup label="Move to ...">
-            <option value="0">Read</option>
+            <option value="3">Read</option>
             <option value="1">Currently Reading</option>
             <option value="2">Want to Read</option>
-            <option value="3">None</option>
+            <option value="4">None</option>
           </optgroup>
         </select>
       </div>

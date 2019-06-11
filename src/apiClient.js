@@ -7,7 +7,6 @@ export default class ApiClient {
       this[method] = (path, { params, data, headers = {}, fields } = {}) => new Promise((resolve, reject) => {
         headers['Accept'] = "application/json;charset=utf-8";
         let request = superagent[method](path)
-          .withCredentials()
           .set(headers);
 
         if (params) {
