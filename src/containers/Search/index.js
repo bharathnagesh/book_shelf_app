@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { getBookLibrary, searchBooks, changeStatus } from '@reducers/bookLibrary';
+import { getBookLibrary, changeStatus } from '@reducers/bookLibrary';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import BookList from '@components/BookList';
@@ -31,7 +31,7 @@ class Home extends Component {
     this.setState({
       searchQuery: e.target.value
     }, () => {
-      this.props.searchBooks(this.state.searchQuery);
+      this.props.getBookLibrary(this.state.searchQuery);
     });
   }
 
@@ -76,7 +76,6 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getBookLibrary,
-  searchBooks,
   changeStatus
 }, dispatch);
 
